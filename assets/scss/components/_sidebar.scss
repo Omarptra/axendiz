@@ -1,0 +1,86 @@
+.sidebar-container {
+    width: 55%;
+    height: 100vh;
+    .sidebar-header-container {
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.75rem;
+        }
+        .backdrop {
+            background: #00000080;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            place-items: center;
+            .preview {
+                width: 75vw;
+                height: 75vw;
+                border-radius: 50%;
+            }
+            .edit {
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 0.75rem;
+            }
+        }
+        
+        .profile-text-wrapper {
+            h3 {
+                font-size: 0.75rem;
+                font-weight: 500;
+            }
+            h5 {
+                font-size: 0.5rem;
+                opacity: 50%;
+            }
+        }
+    }
+    .menu-link-wrapper {
+        border-radius: 0.5rem;
+        font-size: 0.75rem;
+        svg {
+            width: 20px;
+            stroke: $white !important;
+        }
+    }
+    .router-link-active {        
+        background: $accent;
+        opacity: 100%;
+        box-shadow: $soft-shadow;
+        font-weight: 600;
+    }
+}
+
+// profile pict preview
+.bounce-enter-active { animation: bounce 0.25s ease-out }
+.blur-enter-active { animation: blur 0.2s }
+.blur-leave-active { animation: blur 0.1s reverse }
+
+@keyframes blur {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes bounce {
+    0% { transform: scale(0) }
+    50% { transform: scale(1.025) }
+    100% { transform: scale(1) }
+}
+
+
+// sidebar transition
+.slide-fade-enter-active { transition: all 0.5s }
+.slide-fade-leave-active { transition: all 0.5s }
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(-100px);
+    opacity: 0;
+}
